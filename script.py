@@ -6,7 +6,6 @@ import pandas as pd
 print (sys.version)
 print(sys.executable)
 
-#test
 
 with open("./conso-annuelles_v1.csv", 'r',encoding='latin-1') as file:
   tableau=[]
@@ -18,3 +17,9 @@ with open("./conso-annuelles_v1.csv", 'r',encoding='latin-1') as file:
       print(row, end='\n')
       tableau.append(row)
 
+with open ('resultat.csv','w',newline='') as f:
+    ecrire=csv.writer(f)
+    for i in tableau:
+        ecrire.writerow(i)
+print('',end='\n')
+print('longueur du tableau :',len(tableau))
